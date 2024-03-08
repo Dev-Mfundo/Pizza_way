@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Pizza-Online</title>
+</head>
+<body>
+<main>
+
+<?php
+include "include.php";
+?>
+    <!--HEADER-->
+    <div class="header">
+        <span id="logo">Pizza | way</span>
+        <div class="navbar">
+        <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        <ul>
+            <div class="auth">
+            <button id="login-pop-up">Login</button>
+            <img src="./icons/profile_identity.svg" alt="avatar">
+        </div>
+        </div>
+        
+    </div>
+
+    <!--SIGN IN-->
+
+    <div class="form-1">
+        <fieldset>
+            <legend>Login</legend>
+        <form>
+                <label>Email
+                <input type="email" name="email" placeholder="Email" required>
+                </label>
+                <br>
+                <label>Password
+                <input type="password" name="password" placeholder="Password" required>
+                </label>
+                <br>
+                <input type="submit" id="login" value="Login">
+        </form>
+        <hr>
+        <span>Don't have  account?</span>
+        <button id="sign-up">Sign up</button>
+        <button id="cancel-form">Cancel</button>
+        </fieldset>
+    </div>
+
+    <!--SIGN UP-->
+
+    <div class="form-2">
+        <fieldset>
+            <legend>Sign up</legend>
+        <form>
+                <label>Email
+                <input type="email" name="email" placeholder="Email" required>
+                </label>
+                <br>
+                <label>Password
+                <input type="password" name="password" placeholder="Create Password" required>
+                </label>
+                <br>
+                <input type="submit" id="register" value="Sign up">
+        </form>
+        <hr>
+        <span>Have an account?</span>
+        <button id="sign-in">Login</button>
+        <button id="cancel-form2">Cancel</button>
+        </fieldset>
+    </div>
+
+    
+
+    <div class="section">
+
+        <div class="filter-navbar">
+            <h2>Menu</h2>
+            <ul class="nav-list">
+                <li><a href="#">STARTERS</a></li>
+                <li><a href="#">PIZZA</a></li>
+                <li><a href="#">DESSERT</a></li>
+                <li><a href="#">DIPS</a></li>
+                <li><a href="#">DRINKS</a></li>
+            </ul>
+        </div>
+
+
+        <div class="menu">
+            
+            <nav class="cross-line">
+            <h3 id="filter-results">Pizza</h3>
+            <button class="cart-btn">Cart</button>
+            </nav>
+            <div class="cart-list">
+                <h2>Your Basket</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Q</th>
+                        <th>Cost(R)</th>
+                    </tr>
+                    <tr>
+                        <td>Item</td>
+                        <td>1.00</td>
+                        <td>R 0,00</td>
+                    </tr>
+                    <tr>
+                        <th>Delivery</th>
+                        <th></th>
+                        <th>Collection</th>
+                    </tr>
+                    <tr>
+                        <td>Time
+                            <?php
+                        echo " 12:00";
+                            ?></td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <?php
+                            $mydate = getdate(date("U"));
+                            echo "$mydate[month] $mydate[mday], $mydate[year]";
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>2.00</td>
+                        <td>R0</td> 
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id="cancel-basket">Hide</button>
+                        </td>
+                        <td></td>
+                        <td>
+                            <button type="submit">Order Now</button>
+                        </td>
+                        
+                    </tr>
+                </table>
+            </div>
+            <ul>
+                <li>
+                    <h3>Tomato & Cheese</h3>
+                    <p>tomato and mozzarela</p>
+                    <img src="images/mock.jpg" id="item" alt="item">
+
+                    <button type="submit">Add</button>
+                </li>
+                <li>
+                    <h3>Pepperoni</h3>
+                    <p>Pepperoni and mozzarela</p>
+                    <img src="images/mock.jpg" id="item" alt="item">
+                    <button type="submit">Add</button>
+                </li>
+                <li>
+                    <h3>Mozzarela</h3>
+                    <p>Chicken and mozzarela</p>
+                    <img src="images/mock.jpg" id="item" alt="item">
+                    <button type="submit">Add</button>
+                </li>
+                <li>
+                    <h3>Veggy & Mozzarela</h3>
+                    <p>Veggy and mozzarela</p>
+                    <img src="images/mock.jpg" id="item" alt="item">
+                    <button type="submit">Add</button>
+                </li>
+                <li>
+                    <h3>Kasi Pizza</h3>
+                    <p>Kasi Flav and mozzarela</p>
+                    <img src="images/mock.jpg" id="item" alt="item">
+                    <button type="submit">Add</button>
+                </li>
+                <li>
+                    <h3>German Pizza</h3>
+                    <p>Kasi Flav and mozzarela</p>
+                    <img src="images/mock.jpg" id="item" alt="item">
+                    <button type="submit">Add</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="basket">
+
+        </div>
+
+    </div>
+    <div class="footer">
+        <small>
+            <?php
+            $mydate = getdate(date("U"));
+            echo "$mydate[month] $mydate[year]";
+            ?>
+        </small>  
+    </div>
+    
+</main>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
